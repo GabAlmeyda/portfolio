@@ -1,0 +1,13 @@
+.footer {
+    padding: .5rem;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.footer .author * {
+    color: var(--accent-color-primary);
+    font-weight: bold;
+    text-decoration: none;
+}
