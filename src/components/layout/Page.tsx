@@ -1,4 +1,4 @@
-import type { JSX, ReactNode } from "react";
+import { useState, type JSX, type ReactNode } from "react";
 import styles from "../../styles/components/layout/Page.module.css";
 
 import Navbar from "./Navbar";
@@ -19,12 +19,18 @@ interface PageProps {
  * @param {ReactNode} props.children - The content to be displayed within the `Main`
  * component.
  *
- * @returns {JSX.Element} - A JSX element representing the page layout.
+ * @returns {JSX.Element} A JSX element representing the page layout.
  */
 function Page({ children }: PageProps): JSX.Element {
+    const [navbarIsOpen, setNavbarIsOpen] = useState(false);
+
+    const toggleScrollLock = (isOpen: boolean) => {
+        setNavbarIsOpen(isOpen);
+    }
+
     return (
-        <div className={styles.page}>
-            <Navbar />
+        <div className={`${styles.page} ${navbarIsOpen ? styles.navbar_isOpen : ""}`}>
+            <Navbar onMenuClick={toggleScrollLock}/>
             <Main>{children}</Main>
             <Footer />
         </div>

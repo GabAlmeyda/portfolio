@@ -1,8 +1,12 @@
 import type { JSX } from "react";
 
+import HeroSection from "./HeroSection";
+
 function Homepage(): JSX.Element {
 
-    return (<h1>Home Page</h1>)
+    return (<>
+        <HeroSection />
+    </>)
 }
 
 export default Homepage;

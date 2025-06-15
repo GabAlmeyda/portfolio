@@ -5,11 +5,11 @@
  * - "tools".
  * - "contact".
  */
-const WEBSITE_URLS: Record<string, string> = {
+const WEBSITE_URLS = {
     home: "/",
     projects: "/projects",
     tools: "/tools",
     contact: "/contact",
-};
+} as const;
 
 export { WEBSITE_URLS };

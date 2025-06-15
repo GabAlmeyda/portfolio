@@ -3,15 +3,22 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    z-index: 1000;
 
     height: 3rem;
 
     padding: 1rem;
+
+    background-color: transparent;
+}
+
+.navbar.isOpen {
+    background-color: var(--bg-primary);
 }
 
 .navbar__logo,
 .menu__icon {
-    cursor: pointer;
+    cursor: pointer;    
     user-select: none;
 
     height: 2.5rem;
@@ -33,6 +40,9 @@
     overflow-x: hidden;
     overflow-y: hidden;
 
+    position: relative;
+    z-index: 1000;
+
     list-style: none;
 }
 
@@ -50,7 +60,7 @@
     filter: blur(200px);
 }
 
-.navbar__links.open {
+.navbar__links.isOpen {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
