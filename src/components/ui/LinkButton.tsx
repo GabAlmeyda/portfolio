@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-import styles from '../../styles/components/ui/LinkButton.module.css';
+import styles from './components/ui/LinkButton.module.css';
 
 import { WEBSITE_URLS } from "../../utils/constants";
 import { Link } from "react-router-dom";

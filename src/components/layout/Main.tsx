@@ -1,6 +1,6 @@
 import type { JSX, ReactNode } from "react";
 
-import styles from '../../styles/components/layout/Main.module.css';
+import styles from './components/layout/Main.module.css';
 
 interface MainProps {
     children: ReactNode

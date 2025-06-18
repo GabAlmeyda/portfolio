@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-import styles from "../../styles/pages/homepage/HeroSection.module.css";
+import styles from "./pages/homepage/HeroSection.module.css";
 
 import { FaGithub } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
