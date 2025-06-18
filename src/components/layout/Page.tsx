@@ -1,6 +1,6 @@
 import { useState, type JSX, type ReactNode } from "react";
 
-import styles from "./components/layout/Page.module.css";
+import styles from "./Page.module.css";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";

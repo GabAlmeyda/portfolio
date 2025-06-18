@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-import styles from './components/layout/Footer.module.css';
+import styles from './Footer.module.css';
 
 function Footer(): JSX.Element {
     return (

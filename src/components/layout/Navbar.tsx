@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { WEBSITE_URLS } from "../../utils/constants";
 
-import styles from "./components/layout/Navbar.module.css";
+import styles from "./Navbar.module.css";
 
 import { TbCircleLetterAFilled } from "react-icons/tb";
 import { IoMenu } from "react-icons/io5";
