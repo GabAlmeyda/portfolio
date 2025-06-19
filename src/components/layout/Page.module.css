@@ -12,24 +12,6 @@
     max-width: 100%;
 }
 
-.page :where(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--text-heading);
-    text-decoration: underline;
-    text-decoration-color: var(--accent-color-primary);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-}
-
-.page h2 {
-    margin-bottom: 1rem;
-}
-
-.page p {
-    margin-block: .5rem;
-
-    line-height: 1.5rem;
-}
-
 .page.navbar_isOpen {
     overflow-y: hidden;
 }

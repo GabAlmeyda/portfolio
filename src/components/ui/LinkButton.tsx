@@ -3,9 +3,15 @@ import type { JSX } from "react";
 import styles from './LinkButton.module.css';
 
 import { WEBSITE_URLS } from "../../utils/constants";
+import type { projectsInfo } from "../../utils/projectsInfo";
+
+
 import { Link } from "react-router-dom";
 
-type ValidWebsiteURLS = keyof typeof WEBSITE_URLS;
+
+type ProjectID = (typeof projectsInfo[number])["id"];
+type validProjectsPaths = `/projects/${ProjectID}`;
+type ValidWebsiteURLS = keyof typeof WEBSITE_URLS | validProjectsPaths;
 type ValidColors = "primary" | "secondary" | "ghostPrimary" | "ghostSecondary";
 
 interface LinkButtonProps {
