@@ -5,6 +5,7 @@ import styles from './HomePage.module.css';
 import HeroSection from "./HeroSection";
 import AboutSection from './AboutSection';
 import ProjectsSection from "./ProjectsSection";
+import ToolsSection from "./ToolsSection";
 
 function Homepage(): JSX.Element {
 
@@ -12,6 +13,7 @@ function Homepage(): JSX.Element {
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
+        <ToolsSection />
     </div>)
 }
 

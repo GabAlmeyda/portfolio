@@ -10,7 +10,7 @@ import LinkButton from "../../components/ui/LinkButton";
 
 function HeroSection(): JSX.Element {
     return (
-        <div className={styles.hero}>
+        <section className={styles.hero}>
             <div className={styles.hero__content}>
                 <h1 className={styles.hero__intro}>
                     Olá, me chamo <br /> <span>Gabriel Almeida</span>
@@ -48,7 +48,7 @@ function HeroSection(): JSX.Element {
             </div>
 
             <div className={styles.hero__gradient}></div>
-        </div>
+        </section>
     );
 }
 

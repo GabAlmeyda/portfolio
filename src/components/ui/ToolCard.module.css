@@ -1,0 +1,47 @@
+.tool {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .8rem;
+
+    user-select: none;
+
+    border: 2px solid var(--accent-color-secondary);
+    border-radius: 15px;
+    padding: 1rem 1rem;
+
+    transition: transform .5s ease;
+}
+.tool:hover,
+.tool:active {
+    transform: scale(1.03);
+}
+
+.tool__icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.tool__twoIcons :nth-child(1) {
+    position: relative;
+    top: -7px;
+    left: 5px;
+}
+
+.tool__twoIcons :nth-child(2) {
+    position: relative;
+    bottom: -7px;
+    right: 5px;
+}
+
+.tool__icons svg {
+    font-size: 2rem;
+}
+.tool__name p {
+    font-size: 1.2rem;
+    font-variant: small-caps;
+    font-synthesis-small-caps: initial;
+    font-weight: 500;
+    letter-spacing: .05rem;
+}

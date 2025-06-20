@@ -4,7 +4,7 @@ import styles from "./AboutSection.module.css";
 
 function AboutSection(): JSX.Element {
     return (
-        <div className={styles.about}>
+        <section className={styles.about}>
             <h2>Sobre mim</h2>
             <p>
                 Sou um desenvolvedor Full-Stack com experiência em diversos
@@ -16,7 +16,7 @@ function AboutSection(): JSX.Element {
                 Node.JS, criando interfaces agradáveis e eficientes que funcionam
                 em qualquer dispositivo. 
             </p>
-        </div>
+        </section>
     );
 }
 

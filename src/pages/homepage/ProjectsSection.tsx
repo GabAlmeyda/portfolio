@@ -2,18 +2,18 @@ import type { JSX } from "react";
 
 import styles from "./ProjectsSection.module.css";
 
-import { projectsInfo } from "../../utils/projectsInfo";
+import { PROJECTS_INFO } from "../../utils/constants";
 import { WEBSITE_URLS } from "../../utils/constants";
 
 import LinkButton from "../../components/ui/LinkButton";
 
 function ProjectsSection(): JSX.Element {
     return (
-        <div className={styles.projects}>
+        <section className={styles.projects}>
             <h2>Projetos</h2>
 
             <div className={styles.projects__carousel}>
-                {projectsInfo.map((project) => (
+                {PROJECTS_INFO.map((project) => (
                     <div key={project.id} className={styles.carousel__card}>
                         <div className={styles.carousel__imageContainer}>
                             <img
@@ -38,7 +38,7 @@ function ProjectsSection(): JSX.Element {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
 
