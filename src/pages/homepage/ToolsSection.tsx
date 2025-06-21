@@ -10,13 +10,11 @@ function ToolsSection(): JSX.Element {
         <section className={styles.tools}>
             <h2>Minhas habilidades</h2>
 
-            {Object.entries(TOOLS).map(([name, tools]) => (
-                <ToolCard
-                    tools={tools}
-                    name={name}
-                />
-            ))
-            }
+            <div className={styles.tools__grid}>
+                {Object.entries(TOOLS).map(([name, tools]) => (
+                    <ToolCard tools={tools} name={name} />
+                ))}
+            </div>
         </section>
     );
 }
