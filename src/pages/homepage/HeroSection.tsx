@@ -8,6 +8,12 @@ import { TbBrandLinkedinFilled } from "react-icons/tb";
 
 import LinkButton from "../../components/ui/LinkButton";
 
+/**
+ * Renders the hero section of the `Homepage` component.
+ * 
+ * @returns {JSX.Element} A JSX element representing the hero section 
+ * of the `Homepage` component.
+ */
 function HeroSection(): JSX.Element {
     return (
         <section className={styles.hero}>

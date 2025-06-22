@@ -2,6 +2,12 @@ import type { JSX } from "react";
 
 import styles from "./AboutSection.module.css";
 
+/**
+ * Renders the about section of the `Homepage` component.
+ * 
+ * @returns {JSX.Element} A JSX element representing the about section 
+ * of the `Homepage` component.
+ */
 function AboutSection(): JSX.Element {
     return (
         <section className={styles.about}>

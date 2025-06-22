@@ -7,6 +7,12 @@ import { WEBSITE_URLS } from "../../utils/constants";
 
 import LinkButton from "../../components/ui/LinkButton";
 
+/**
+ * Renders the projects section of the `Homepage` component.
+ * 
+ * @returns {JSX.Element} A JSX element representing the projects section 
+ * of the `Homepage` component.
+ */
 function ProjectsSection(): JSX.Element {
     return (
         <section className={styles.projects}>

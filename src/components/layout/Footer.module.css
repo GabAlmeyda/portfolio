@@ -1,8 +1,12 @@
 .footer {
+    height: 3rem;
+    
     padding: .5rem;
 }
 
 .footer p {
+    margin: 0;
+
     text-align: center;
 }
 
