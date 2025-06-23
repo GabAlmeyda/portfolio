@@ -19,6 +19,9 @@
 }
 
 .contact__gradients {
+    user-select: none;
+    pointer-events: none;
+
     position: relative;
     top: calc(3rem + 1rem);
 

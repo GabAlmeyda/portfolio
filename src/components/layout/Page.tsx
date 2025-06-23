@@ -1,5 +1,7 @@
 import { useState, type JSX, type ReactNode } from "react";
 
+import { WEBSITE_URLS } from "../../utils/constants";
+
 import styles from "./Page.module.css";
 
 import Navbar from "./Navbar";
@@ -9,6 +11,14 @@ import Main from "./Main";
 interface PageProps {
     children: ReactNode;
 }
+
+const NAVBAR_LINKS = {
+    Home: WEBSITE_URLS.home,
+    Sobre: "#about",
+    Projetos: "#projects",
+    Habilidades: "#tools",
+    Contato: WEBSITE_URLS.contact,
+} as const;
 
 /**
  * Renders a page layout component that wraps its children in a styled container.
@@ -31,7 +41,7 @@ function Page({ children }: PageProps): JSX.Element {
 
     return (
         <div className={`${styles.page} ${navbarIsOpen ? styles.navbar_isOpen : ""}`}>
-            <Navbar onMenuClick={toggleScrollLock}/>
+            <Navbar onMenuClick={toggleScrollLock} links={NAVBAR_LINKS}/>
             <Main>{children}</Main>
             <Footer />
         </div>

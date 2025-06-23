@@ -15,7 +15,7 @@ import LinkButton from "../../components/ui/LinkButton";
  */
 function ProjectsSection(): JSX.Element {
     return (
-        <section className={styles.projects}>
+        <section className={styles.projects} id="projects">
             <h2>Projetos</h2>
 
             <div className={styles.projects__carousel}>

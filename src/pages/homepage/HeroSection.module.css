@@ -63,6 +63,9 @@
 }
 
 .hero__gradient {
+    user-select: none;
+    pointer-events: none;
+
     position: absolute;
     left: -10px;
     top: -3rem;

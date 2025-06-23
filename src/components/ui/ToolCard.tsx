@@ -40,7 +40,7 @@ function ToolCard({
                 }`}
             >
                 {tools.map(({ Icon, color }) => (
-                    <Icon style={{ color: color }} />
+                    <Icon style={{ color: color }} key={`toolcard-icon-${Icon}`} />
                 ))}
             </span>
             <span className={styles.tool__name}>

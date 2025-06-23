@@ -9,30 +9,25 @@ import { TbCircleLetterAFilled } from "react-icons/tb";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 
-const NAVBAR_LINKS = {
-    Home: WEBSITE_URLS.home,
-    Projetos: WEBSITE_URLS.projects,
-    Ferramentas: WEBSITE_URLS.tools,
-    Contato: WEBSITE_URLS.contact,
-};
-
 interface NavbarProps {
     onMenuClick: (isOpen: boolean) => void;
+    links: Record<string, string>;
 }
 
 /**
  * Renders a responsible navigation bar component. On smaller screens, the navigation collapses
  * into a hamburguer menu. On bigger screens, it expands into a horizontal menu.
- * 
+ *
  * @param {Object} props - The properties of the component.
  * @param {Function} props.onMenuClick - The function to handle the menu click event. This
  * function should be used to lock and unlock the scroll of the parent element, avoiding the
  * scroll when the navigation bar is open. This fucntion is called passing the boolean state
  * of the navigation bar: `true` if open; `false` is closed.
+ * @param {object} props.links - An object where the keys are the label and the values are the links.
  *
  * @returns {JSX.Element} A JSX element representing a responsible navigation bar.
  */
-function Navbar({onMenuClick}: NavbarProps): JSX.Element {
+function Navbar({ onMenuClick, links }: NavbarProps): JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = (): void => {
@@ -41,9 +36,7 @@ function Navbar({onMenuClick}: NavbarProps): JSX.Element {
     };
 
     return (
-        <nav
-            className={`${styles.navbar} ${isOpen ? styles.isOpen : ""}`}
-        >
+        <nav className={`${styles.navbar} ${isOpen ? styles.isOpen : ""}`}>
             <div
                 className={styles.navbar__logo}
                 onClick={() => setIsOpen(false)}
@@ -71,9 +64,26 @@ function Navbar({onMenuClick}: NavbarProps): JSX.Element {
                 }`}
                 id="navbar__links"
             >
-                {Object.entries(NAVBAR_LINKS).map(([label, url]) => (
-                    <li className={styles.navbar__link} key={`li-${label}`}>
-                        <Link to={url}>{label}</Link>
+                {Object.entries(links).map(([label, url]) => (
+                    <li
+                        className={styles.navbar__link}
+                        key={`li-${label}`}
+                        onClick={toggleMenu}
+                    >
+                        {url[0] === "#" ? (
+                            <a
+                                href={url}
+                                target="_self"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    document.getElementById(url.slice(1))?.scrollIntoView({ behavior: "smooth" });
+                                }}
+                            >
+                                {label}
+                            </a>
+                        ) : (
+                            <Link to={url}>{label}</Link>
+                        )}
                     </li>
                 ))}
                 <div

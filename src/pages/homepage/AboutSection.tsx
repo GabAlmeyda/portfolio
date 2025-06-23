@@ -10,7 +10,7 @@ import styles from "./AboutSection.module.css";
  */
 function AboutSection(): JSX.Element {
     return (
-        <section className={styles.about}>
+        <section className={styles.about} id="about">
             <h2>Sobre mim</h2>
             <p>
                 Sou um desenvolvedor Full-Stack com experiência em diversos

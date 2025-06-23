@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import { useEffect, type JSX } from "react";
 
 import HeroSection from "./HeroSection";
 import AboutSection from './AboutSection';
@@ -19,6 +19,18 @@ import ContactSection from "./ContactSection";
  * website.
  */
 function Homepage(): JSX.Element {
+
+    // Updates the <meta name="description"> for this specific page.
+    useEffect(() => {
+        let metaTag: HTMLMetaElement | null = document.querySelector(`meta[name=${"description"}]`);
+        if (!metaTag) {
+            metaTag = document.createElement("meta");
+            metaTag.name = "description";
+            document.head.appendChild(metaTag);
+        }
+
+        metaTag.content = "Explore meus projetos de desenvolvimento web e conheça minhas habilidades.";
+    }, []);
 
     return (<>
         <HeroSection />

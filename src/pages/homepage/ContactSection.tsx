@@ -5,8 +5,8 @@ import LinkButton from "../../components/ui/LinkButton";
 
 /**
  * Renders the contact section of the `Homepage` component.
- * 
- * @returns {JSX.Element} A JSX element representing the contact section 
+ *
+ * @returns {JSX.Element} A JSX element representing the contact section
  * of the `Homepage` component.
  */
 function ContactSection(): JSX.Element {
@@ -15,7 +15,8 @@ function ContactSection(): JSX.Element {
             <div className={styles.contact__content}>
                 <h2>Vamos trabalhar juntos</h2>
                 <p>
-                    Tem um projeto em mente? Vamos conversar e descobrir como posso te ajudar!
+                    Tem um projeto em mente? Vamos conversar e descobrir como
+                    posso te ajudar!
                 </p>
 
                 <LinkButton
@@ -25,8 +26,11 @@ function ContactSection(): JSX.Element {
                 />
             </div>
             <div className={styles.contact__gradients}>
-                {Array.from({ length: 4 }).map(() => (
-                    <div className={styles.gradients__gradient}></div>
+                {Array.from({ length: 4 }).map((_, index) => (
+                    <div
+                        className={styles.gradients__gradient}
+                        key={`gradient-${index}`}
+                    ></div>
                 ))}
             </div>
         </section>

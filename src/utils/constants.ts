@@ -48,15 +48,13 @@ interface Project {
 
 /**
  * An object containing all the URLS used across the website, all listed below:
- * - "home".
- * - "projects".
- * - "tools".
- * - "contact".
+ * - `home`.
+ * - `projects`.
+ * - `contact`.
  */
 const WEBSITE_URLS = {
     home: "/",
-    projects: "/projects",
-    tools: "/tools",
+    projects: "/projects/",
     contact: "/contact",
 } as const;
 

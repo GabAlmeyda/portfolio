@@ -13,12 +13,12 @@ import ToolCard from "../../components/ui/ToolCard";
  */
 function ToolsSection(): JSX.Element {
     return (
-        <section className={styles.tools}>
+        <section className={styles.tools} id="tools">
             <h2>Minhas habilidades</h2>
 
             <div className={styles.tools__grid}>
                 {Object.entries(TOOLS).map(([name, tools]) => (
-                    <ToolCard tools={tools} name={name} />
+                    <ToolCard tools={tools} name={name} key={`toolcard-${name}`}/>
                 ))}
             </div>
         </section>
