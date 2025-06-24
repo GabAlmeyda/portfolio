@@ -1,20 +1,21 @@
 import type { JSX } from "react";
 
-import styles from "./HeroSection.module.css";
+import styles from "./Hero.module.css";
+import { navigateTo } from "../utils/functions";
 
 import { FaGithub } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 
-import LinkButton from "../../components/ui/LinkButton";
+import Button from "../components/ui/Button";
 
 /**
- * Renders the hero section of the `Homepage` component.
+ * Renders the hero section of the website.
  * 
  * @returns {JSX.Element} A JSX element representing the hero section 
- * of the `Homepage` component.
+ * of the website.
  */
-function HeroSection(): JSX.Element {
+function Hero(): JSX.Element {
     return (
         <section className={styles.hero}>
             <div className={styles.hero__content}>
@@ -27,10 +28,10 @@ function HeroSection(): JSX.Element {
                 </p>
 
                 <span className={styles.hero__cta}>
-                    <LinkButton
+                    <Button
                         label="Entre em contato"
-                        to="contact"
                         color="primary"
+                        onClick={() => navigateTo("contact")}
                     />
                 </span>
 
@@ -58,4 +59,4 @@ function HeroSection(): JSX.Element {
     );
 }
 
-export default HeroSection;
+export default Hero;

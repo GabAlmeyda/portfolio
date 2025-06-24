@@ -1,11 +1,8 @@
 import { useState, type JSX } from "react";
-import { Link } from "react-router-dom";
-
-import { WEBSITE_URLS } from "../../utils/constants";
 
 import styles from "./Navbar.module.css";
+import { navigateTo } from "../../utils/functions";
 
-import { TbCircleLetterAFilled } from "react-icons/tb";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 
@@ -37,18 +34,6 @@ function Navbar({ onMenuClick, links }: NavbarProps): JSX.Element {
 
     return (
         <nav className={`${styles.navbar} ${isOpen ? styles.isOpen : ""}`}>
-            <div
-                className={styles.navbar__logo}
-                onClick={() => setIsOpen(false)}
-            >
-                <Link
-                    to={WEBSITE_URLS.home}
-                    aria-label="Voltar para página inicial"
-                >
-                    <TbCircleLetterAFilled />
-                </Link>
-            </div>
-
             <button
                 className={styles.menu__icon}
                 aria-label="Abrir ou fechar menu"
@@ -64,26 +49,19 @@ function Navbar({ onMenuClick, links }: NavbarProps): JSX.Element {
                 }`}
                 id="navbar__links"
             >
-                {Object.entries(links).map(([label, url]) => (
+                {Object.entries(links).map(([label, id]) => (
                     <li
                         className={styles.navbar__link}
                         key={`li-${label}`}
                         onClick={toggleMenu}
                     >
-                        {url[0] === "#" ? (
-                            <a
-                                href={url}
-                                target="_self"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    document.getElementById(url.slice(1))?.scrollIntoView({ behavior: "smooth" });
-                                }}
-                            >
-                                {label}
-                            </a>
-                        ) : (
-                            <Link to={url}>{label}</Link>
-                        )}
+                        <a
+                            href="#"
+                            target="_self"
+                            onClick={() => navigateTo(id)}
+                        >
+                            {label}
+                        </a>
                     </li>
                 ))}
                 <div

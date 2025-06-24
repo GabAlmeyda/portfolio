@@ -1,7 +1,8 @@
 .button {
     display: inline-block;
+    cursor: pointer;
     
-    border: 2px solid var(--accent-color-primary);
+    border: none;
     border-radius: 10px;
     padding: .5rem .8rem;
 
@@ -10,15 +11,18 @@
     text-decoration: none;
     font-family: var(--font-text);
 
-    transition: transform .3s ease;
+    transition: transform .3s ease, filter .3s ease;
+    will-change: transform;
 }
 
 .button:hover {
     filter: brightness(.8);
+    transform: scale(1.04);
 }
 
 .button:active {
     filter: brightness(.6);
+    transform: scale(.98);
 }
 
 .primary {

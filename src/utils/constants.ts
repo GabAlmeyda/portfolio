@@ -43,20 +43,9 @@ interface Project {
     title: string;
     summary: string;
     description: string;
+    url: string;
     tools: Tool[];
 }
-
-/**
- * An object containing all the URLS used across the website, all listed below:
- * - `home`.
- * - `projects`.
- * - `contact`.
- */
-const WEBSITE_URLS = {
-    home: "/",
-    projects: "/projects/",
-    contact: "/contact",
-} as const;
 
 /**
  * An object containing all the known tools used for projects as a key/value pair,
@@ -90,6 +79,7 @@ const PROJECTS_INFO: Project[] = [
         summary: "Portfólio moderno para desenvolvedores.",
         description:
             "Uma página pessoal responsiva criada com React e TypeScript, com layout limpo, animações suaves e foco em performance.",
+        url: "",
         tools: [
             { Icon: SiReact, name: "React" },
             { Icon: SiTypescript, name: "TypeScript" },
@@ -103,6 +93,7 @@ const PROJECTS_INFO: Project[] = [
         summary: "App de tarefas com Kanban.",
         description:
             "Gerenciador de tarefas no estilo Trello, com colunas, drag and drop e persistência local.",
+        url: "",
         tools: [
             { Icon: SiReact, name: "React" },
             { Icon: SiTypescript, name: "TypeScript" },
@@ -116,6 +107,7 @@ const PROJECTS_INFO: Project[] = [
         summary: "Controle financeiro pessoal.",
         description:
             "Aplicativo de controle financeiro com gráficos e categorias personalizadas. Interface intuitiva e mobile-first.",
+        url: "",
         tools: [
             { Icon: SiReact, name: "React" },
             { Icon: SiMongodb, name: "MongoDB" },
@@ -129,6 +121,7 @@ const PROJECTS_INFO: Project[] = [
         summary: "Gerenciador de livros",
         description:
             "Um site para adicionar, remover ou até filtrar livros registrados, com interface simples, eficaz e objetiva e persistência local",
+        url: "",
         tools: [
             { Icon: SiFigma, name: "Figma" },
             { Icon: SiReact, name: "React" },
@@ -137,5 +130,5 @@ const PROJECTS_INFO: Project[] = [
     },
 ] as const;
 
-export { WEBSITE_URLS, TOOLS, PROJECTS_INFO };
+export { TOOLS, PROJECTS_INFO };
 export type { Project, Tool, ToolIcon };

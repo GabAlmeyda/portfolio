@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: row;
     z-index: 1000;
@@ -16,7 +16,6 @@
     background-color: var(--bg-primary);
 }
 
-.navbar__logo,
 .menu__icon {
     cursor: pointer;    
     user-select: none;
@@ -29,7 +28,6 @@
     background-color: transparent;
 }
 
-.navbar__logo svg,
 .menu__icon svg {
     font-size: 2.5rem;
     color: var(--accent-color-primary);

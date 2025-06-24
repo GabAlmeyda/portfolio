@@ -1,11 +1,12 @@
 import { useState, type ChangeEvent, type FormEvent, type JSX } from "react";
 import emailjs from "emailjs-com";
 
-import styles from "./ContantPage.module.css";
-import Form from "../../components/form/Form";
-import Input from "../../components/form/Input";
-import Textarea from "../../components/form/Textarea";
-import Button from "../../components/ui/Button";
+import styles from "./Contact.module.css";
+
+import Form from "../components/form/Form";
+import Input from "../components/form/Input";
+import Textarea from "../components/form/Textarea";
+import Button from "../components/ui/Button";
 
 interface FormData {
     name: string;
@@ -14,7 +15,13 @@ interface FormData {
     message: string;
 }
 
-function ContactPage(): JSX.Element {
+/**
+ * Renders the contact section of the website.
+ * 
+ * @returns {JSX.Element} A JSX element representing the contact section 
+ * of the website.
+ */
+function Contact(): JSX.Element {
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -44,11 +51,12 @@ function ContactPage(): JSX.Element {
             if (value.trim() === "") {
                 setErrors((prev) => ({ ...prev, [key]: true }));
             }
-        })
+        });
         if (Object.values(errors).some((value) => value)) {
             return;
         }
 
+        //! Delete in production
         console.log("Email sent successfully");
         return;
 
@@ -72,7 +80,7 @@ function ContactPage(): JSX.Element {
     };
 
     return (
-        <section className={styles.contact}>
+        <section className={styles.contact} id="contact">
             <h2>Vamos conversar</h2>
             <p>
                 Preenchar o formulário abaixo e vamos começar a tirar sua ideia
@@ -121,4 +129,4 @@ function ContactPage(): JSX.Element {
     );
 }
 
-export default ContactPage;
+export default Contact;

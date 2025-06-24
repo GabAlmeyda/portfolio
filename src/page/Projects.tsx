@@ -1,19 +1,18 @@
 import type { JSX } from "react";
 
-import styles from "./ProjectsSection.module.css";
+import styles from "./Projects.module.css";
 
-import { PROJECTS_INFO } from "../../utils/constants";
-import { WEBSITE_URLS } from "../../utils/constants";
+import { PROJECTS_INFO } from "../utils/constants";
 
-import LinkButton from "../../components/ui/LinkButton";
+import Button from "../components/ui/Button";
 
 /**
- * Renders the projects section of the `Homepage` component.
+ * Renders the projects section of the website.
  * 
  * @returns {JSX.Element} A JSX element representing the projects section 
- * of the `Homepage` component.
+ * of the website.
  */
-function ProjectsSection(): JSX.Element {
+function Projects(): JSX.Element {
     return (
         <section className={styles.projects} id="projects">
             <h2>Projetos</h2>
@@ -35,10 +34,10 @@ function ProjectsSection(): JSX.Element {
                         </p>
 
                         <div className={styles.card__linkButtonContainer}>
-                            <LinkButton
+                            <Button
                                 label="Conheça"
-                                to={`${WEBSITE_URLS.projects}/${project.id}`}
                                 color="secondary"
+                                onClick={() => window.open(project.url, "_blank")}
                             />
                         </div>
                     </div>
@@ -48,4 +47,4 @@ function ProjectsSection(): JSX.Element {
     );
 }
 
-export default ProjectsSection;
+export default Projects;

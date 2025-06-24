@@ -1,7 +1,5 @@
 import { useState, type JSX, type ReactNode } from "react";
 
-import { WEBSITE_URLS } from "../../utils/constants";
-
 import styles from "./Page.module.css";
 
 import Navbar from "./Navbar";
@@ -13,11 +11,10 @@ interface PageProps {
 }
 
 const NAVBAR_LINKS = {
-    Home: WEBSITE_URLS.home,
-    Sobre: "#about",
-    Projetos: "#projects",
-    Habilidades: "#tools",
-    Contato: WEBSITE_URLS.contact,
+    Sobre: "about",
+    Projetos: "projects",
+    Habilidades: "tools",
+    Contato: "contact",
 } as const;
 
 /**

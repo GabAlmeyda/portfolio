@@ -1,14 +1,14 @@
 import type { JSX } from "react";
 
-import styles from "./AboutSection.module.css";
+import styles from "./About.module.css";
 
 /**
- * Renders the about section of the `Homepage` component.
+ * Renders the about section of the website.
  * 
  * @returns {JSX.Element} A JSX element representing the about section 
- * of the `Homepage` component.
+ * of the website.
  */
-function AboutSection(): JSX.Element {
+function About(): JSX.Element {
     return (
         <section className={styles.about} id="about">
             <h2>Sobre mim</h2>
@@ -26,4 +26,4 @@ function AboutSection(): JSX.Element {
     );
 }
 
-export default AboutSection;
+export default About;
