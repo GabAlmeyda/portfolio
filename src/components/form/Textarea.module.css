@@ -1,0 +1,63 @@
+.field {
+    display: flex;
+    flex-direction: column;
+
+    width: clamp(250px, 90%, 400px);
+}
+
+.field__label {
+    display: inline-block;
+
+    color: var(--font-secondary);
+    font-weight: 500;
+    font-family: var(--text-font);
+}
+
+.field__textarea {
+    display: inline-block;
+
+    resize: vertical;
+    min-height: 100px;
+
+    border: 2px solid var(--bg-muted);
+    border-radius: 15px;
+    padding: .3rem 1rem;
+    outline: none;
+
+    background-color: transparent;
+
+    color: var(--font-primary);
+    font-size: .9rem;
+    font-family: var(--text-font);
+}
+
+.field__textarea:hover {
+    border-color: #10366b;
+
+    background-color: var(--bg-primary);
+    filter: brightness(0.8);
+}
+
+.field__textarea:active,
+.field__textarea:focus-within {
+    border-color: rgb(27, 85, 167);
+
+    background-color: var(--bg-primary);
+    filter: brightness(0.8);
+}
+
+.invalid .field__label,
+.invalid .field__textarea {
+    border-color: rgb(209, 17, 17);
+}
+.invalid .field__label:hover,
+.invalid .field__textarea:hover {
+    border-color: rgb(255, 0, 0)
+}
+
+.invalid .field__label {
+    color: rgb(209, 17, 17  );
+}
+.invalid .field__label:hover {
+    color: rgb(209, 17, 17  );
+}

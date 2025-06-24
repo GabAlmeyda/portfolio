@@ -26,11 +26,11 @@ interface LinkButtonProps {
  * @param {Object} props - The properties of the component.
  * @param {string} props.label - The text to be displayed within the button.
  * @param {ValidWebsiteURLS} props.to - The page destination of the navigation.
- * @param {ValidColors} props.color - The color of the button.
+ * @param {ValidColors} [props.color] - The color of the button.
  *  
  * @returns {JSX.Element} A JSX element representing the custom button for navigation.
  */
-function LinkButton({label, to, color}: LinkButtonProps): JSX.Element {
+function LinkButton({label, to, color="primary"}: LinkButtonProps): JSX.Element {
     return <Link to={to} className={`${styles.linkButton} ${styles[color]}`} type="button">
         {label}
     </Link>
