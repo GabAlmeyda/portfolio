@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent, type JSX } from "react";
+import { useEffect, useState, type ChangeEvent, type FormEvent, type JSX } from "react";
 import emailjs from "emailjs-com";
 
 import styles from "./Contact.module.css";
@@ -17,16 +17,21 @@ interface FormData {
 
 /**
  * Renders the contact section of the website.
- * 
- * @returns {JSX.Element} A JSX element representing the contact section 
+ *
+ * @returns {JSX.Element} A JSX element representing the contact section
  * of the website.
  */
 function Contact(): JSX.Element {
-    const [formData, setFormData] = useState<FormData>({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+    const [formData, setFormData] = useState<FormData>(() => {
+        const stored = sessionStorage.getItem("formData");
+        return stored
+            ? JSON.parse(stored)
+            : {
+                  name: "",
+                  email: "",
+                  subject: "",
+                  message: "",
+              };
     });
     const [errors, setErrors] = useState<Record<keyof FormData, boolean>>({
         name: false,
@@ -34,6 +39,10 @@ function Contact(): JSX.Element {
         subject: false,
         message: false,
     });
+
+    useEffect(() => {
+        sessionStorage.setItem("formData", JSON.stringify(formData));
+    }, [formData]);
 
     const handleChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -52,7 +61,7 @@ function Contact(): JSX.Element {
                 setErrors((prev) => ({ ...prev, [key]: true }));
             }
         });
-        if (Object.values(errors).some((value) => value)) {
+        if (Object.values(errors).some((value) => value === true)) {
             return;
         }
 
@@ -93,6 +102,7 @@ function Contact(): JSX.Element {
                         value={formData.name}
                         label="Nome:"
                         id="name"
+                        autoComplete="name"
                         isInvalid={errors.name}
                         onChange={handleChange}
                     />
@@ -100,6 +110,7 @@ function Contact(): JSX.Element {
                         value={formData.email}
                         label="Email:"
                         id="email"
+                        autoComplete="email"
                         isInvalid={errors.email}
                         type="email"
                         onChange={handleChange}

@@ -49,23 +49,18 @@ interface Project {
 
 /**
  * An object containing all the known tools used for projects as a key/value pair,
- * where the key is the icon names and the value is a array containing objects of the
- * 'ToolIcon' type.
+ * where the key is the icon names and the value is a object of the 'ToolIcon' type.
  */
-const TOOLS: Record<string, ToolIcon[]> = {
-    Figma: [{ Icon: SiFigma, color: "purple" }],
-    "Git/GitHub": [
-        { Icon: SiGit, color: "orangered" },
-        { Icon: SiGithub, color: "white" },
-    ],
-    Python: [{ Icon: SiPython, color: "dodgerblue" }],
-    "HTML5/CSS3": [
-        { Icon: SiHtml5, color: "orangered" },
-        { Icon: SiCss3, color: "dodgerblue" },
-    ],
-    JavaScript: [{ Icon: SiJavascript, color: "yellow" }],
-    TypeScript: [{ Icon: SiTypescript, color: "dodgerblue" }],
-    React: [{ Icon: SiReact, color: "deepskyblue" }],
+const TOOLS: Record<string, ToolIcon> = {
+    Figma: { Icon: SiFigma, color: "purple" },
+    Git: { Icon: SiGit, color: "orangered" },
+    GitHub: { Icon: SiGithub, color: "white" },
+    Python: { Icon: SiPython, color: "dodgerblue" },
+    HTML5: { Icon: SiHtml5, color: "orangered" },
+    CSS3: { Icon: SiCss3, color: "dodgerblue" },
+    JavaScript: { Icon: SiJavascript, color: "yellow" },
+    TypeScript: { Icon: SiTypescript, color: "dodgerblue" },
+    React: { Icon: SiReact, color: "deepskyblue" },
 };
 
 /**

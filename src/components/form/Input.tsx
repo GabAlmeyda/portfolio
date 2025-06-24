@@ -17,6 +17,7 @@ interface InputProps {
     value: string;
     label?: string;
     placeholder?: string;
+    autoComplete?: string;
     isInvalid: boolean
     type?: InputTypes;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -30,6 +31,8 @@ interface InputProps {
  * @param {string} props.value - The content of the input.
  * @param {string} [props.label] - The label of the input.
  * @param {string} [props.placeholder] - The placeholder of the input.
+ * @param {string} [props.autoComplete] - The HTML auto complete type of the input. If not 
+ * passed, the input will not have an auto complete.
  * @param {boolean} [props.isInvalid] - Indicates if the content of the field is invalid to
  * set a custom style for the error.
  * @param {InputTypes} [props.type] - The HTML type attribute of the input.
@@ -45,6 +48,7 @@ function Input({
     value,
     label,
     placeholder = "",
+    autoComplete="off",
     isInvalid = false,
     type = "text",
     onChange,
@@ -66,6 +70,7 @@ function Input({
                 placeholder={placeholder}
                 value={value}
                 className={styles.field__input}
+                autoComplete={autoComplete}
             />
         </div>
     );

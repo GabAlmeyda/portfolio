@@ -16,19 +16,17 @@
 }
 
 .button:hover {
-    filter: brightness(.8);
-    transform: scale(1.04);
+    filter: brightness(.6);
 }
 
 .button:active {
-    filter: brightness(.6);
-    transform: scale(.98);
+    filter: brightness(.4);
 }
 
 .primary {
     background-color: var(--accent-color-primary);
 
-    color: #1c1c1c;
+    color: #111;
 }
 
 .secondary {

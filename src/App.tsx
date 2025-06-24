@@ -5,6 +5,7 @@ import Hero from "./page/Hero";
 import About from "./page/About";
 import Projects from "./page/Projects";
 import Contact from "./page/Contact";
+import Skills from "./page/skills";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Hero />
             <About />
             <Projects />
+            <Skills />
             <Contact />
         </Page>
     );
