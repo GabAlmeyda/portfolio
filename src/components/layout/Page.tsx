@@ -12,8 +12,8 @@ interface PageProps {
 
 const NAVBAR_LINKS = {
     Sobre: "about",
+    Habilidades: "skills",
     Projetos: "projects",
-    Habilidades: "tools",
     Contato: "contact",
 } as const;
 

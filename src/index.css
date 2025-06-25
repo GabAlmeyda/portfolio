@@ -59,10 +59,7 @@ section {
 
 :where(h1, h2, h3, h4, h5, h6) {
     font-family: var(--text-heading);
-    text-decoration: underline;
-    text-decoration-color: var(--accent-color-primary);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
+    color: var(--accent-color-primary);
 }
 
 h2 {

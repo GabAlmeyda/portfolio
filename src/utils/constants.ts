@@ -1,40 +1,16 @@
 import {
     SiFigma,
-    SiHtml5,
     SiCss3,
-    SiPython,
-    SiJavascript,
     SiTypescript,
     SiReact,
-    SiGit,
-    SiGithub,
     SiNodedotjs,
     SiMongodb,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
 
-/**
- * @exmaple
- * {
- *  icon: IconType;
- *  name: string;
- * }
- */
-interface Tool {
-    Icon: IconType;
-    name: string;
-}
-
-/**
- * @example
- * {
- *  icon: IconType;
- *  color: string;
- * }
- */
 interface ToolIcon {
+    name: string;
     Icon: IconType;
-    color: string;
 }
 
 interface Project {
@@ -44,24 +20,8 @@ interface Project {
     summary: string;
     description: string;
     url: string;
-    tools: Tool[];
+    tools: ToolIcon[];
 }
-
-/**
- * An object containing all the known tools used for projects as a key/value pair,
- * where the key is the icon names and the value is a object of the 'ToolIcon' type.
- */
-const TOOLS: Record<string, ToolIcon> = {
-    Figma: { Icon: SiFigma, color: "purple" },
-    Git: { Icon: SiGit, color: "orangered" },
-    GitHub: { Icon: SiGithub, color: "white" },
-    Python: { Icon: SiPython, color: "dodgerblue" },
-    HTML5: { Icon: SiHtml5, color: "orangered" },
-    CSS3: { Icon: SiCss3, color: "dodgerblue" },
-    JavaScript: { Icon: SiJavascript, color: "yellow" },
-    TypeScript: { Icon: SiTypescript, color: "dodgerblue" },
-    React: { Icon: SiReact, color: "deepskyblue" },
-};
 
 /**
  * An object containing all the projects made
@@ -78,7 +38,7 @@ const PROJECTS_INFO: Project[] = [
         tools: [
             { Icon: SiReact, name: "React" },
             { Icon: SiTypescript, name: "TypeScript" },
-            { Icon: SiCss3, name: "CSS Modules" },
+            { Icon: SiCss3, name: "CSS3" },
         ],
     },
     {
@@ -125,5 +85,5 @@ const PROJECTS_INFO: Project[] = [
     },
 ] as const;
 
-export { TOOLS, PROJECTS_INFO };
-export type { Project, Tool, ToolIcon };
+export { PROJECTS_INFO };
+export type { Project, ToolIcon };

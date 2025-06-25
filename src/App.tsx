@@ -5,15 +5,15 @@ import Hero from "./page/Hero";
 import About from "./page/About";
 import Projects from "./page/Projects";
 import Contact from "./page/Contact";
-import Skills from "./page/skills";
+import Skills from "./page/Skills";
 
 function App() {
     return (
         <Page>
             <Hero />
             <About />
-            <Projects />
             <Skills />
+            <Projects />
             <Contact />
         </Page>
     );

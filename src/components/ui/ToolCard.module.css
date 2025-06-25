@@ -15,72 +15,11 @@
     border-radius: 15px;
     padding: 1rem 1rem;
 }
-/* Tooltip title*/
-.tool__icon:hover::after {
-    content: attr(data-title);
-
-    display: flex;
-    position: absolute;
-    top: -40%;
-    left: 50%;
-    z-index: 3;
-
-    padding: .2rem .2rem;
-    border-radius: 3px;
-
-    background-color: var(--bg-muted);
-
-    color: #ececec;
-    white-space: nowrap;
-    font-size: .8rem;
-
-    transform: translateX(-50%) scale(0);
-    animation: tool-tip-label .2s .6s ease forwards;
-}
-/* Tooltip arrow*/
-.tool__icon:hover::before {
-    content: "";
-
-    position: absolute;
-    top: -20%;
-    left: 50%;
-    z-index: 2;
-
-    height: 15px;
-    width: 15px;
-
-    border-radius: 3px;
-
-    background-color: var(--bg-muted);
-
-    transform: translateX(-50%) rotate(45deg) scale(0);
-    animation: tool-tip-arrow .2s .6s ease forwards;
-}
 
 .tool__icon svg {
     position: relative;
     bottom: -2px;
     
     font-size: 2rem;
-}
-
-@keyframes tool-tip-label {
-    from {
-        transform: translateX(-50%) scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(-50%) scale(1);
-        opacity: 1;
-    }
-}
-@keyframes tool-tip-arrow {
-    from {
-        transform: translateX(-50%) rotate(45deg) scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(-50%) rotate(45deg) scale(1);
-        opacity: 1;
-    }
+    color: var(--accent-color-secondary);
 }
