@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-import styles from "./Skills.module.css";
+import styles from "./Tools.module.css";
 import type { ToolIcon } from "../utils/constants";
 
 import {
@@ -59,12 +59,18 @@ const backendTools: ToolCard = {
     ],
 };
 
-function Skills(): JSX.Element {
+/**
+ * Renders the tools section of the website.
+ * 
+ * @returns {JSX.Element} A JSX element representing the tools section 
+ * of the website.
+ */
+function Tools(): JSX.Element {
     return (
-        <section className={styles.skills} id="skills">
+        <section className={styles.tools} id="tools">
             <h2>Habilidades</h2>
             <p>Estas são as linguagens e ferramentas que utilizo para criar sites responsivos e modernos:</p>
-            <div className={styles.skills__cards}>
+            <div className={styles.tools__cards}>
                 {Array.from([supportTools, frontendTools, backendTools]).map(
                     (card) => (
                         <div className={styles.card} key={`card-${card.title}`}>
@@ -86,4 +92,4 @@ function Skills(): JSX.Element {
     );
 }
 
-export default Skills;
+export default Tools;

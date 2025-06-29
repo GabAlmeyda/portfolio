@@ -65,10 +65,6 @@ function Contact(): JSX.Element {
             return;
         }
 
-        //! Delete in production
-        console.log("Email sent successfully");
-        return;
-
         try {
             await emailjs.send(
                 "service_portfolio",
