@@ -1,5 +1,5 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent, type JSX } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 import styles from "./Contact.module.css";
 
