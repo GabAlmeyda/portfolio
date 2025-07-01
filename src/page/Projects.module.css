@@ -13,8 +13,7 @@
 .carousel__card {
     position: relative;
 
-    flex: 0 0 clamp(280px, 95%, 400px);
-    height: 350px;
+    flex: 0 0 clamp(280px, 95%, 370px);
 
     scroll-snap-align: center;
 
@@ -79,6 +78,7 @@
 
 .card__title {
     text-decoration: none;
+    color: var(--font-primary);
 }
 
 .card__summary {
@@ -87,7 +87,10 @@
     line-clamp: 3;
     -webkit-box-orient: vertical;
 
-    max-height: calc(3 * 1rem);
+    min-height: 3rem;
+    max-height: 3rem;
+
+    margin-bottom: 4rem;
 
     font-size: .9rem;
     line-height: 1rem;

@@ -5,6 +5,7 @@ import { navigateTo } from "../../utils/functions";
 
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
+import useIsMobile from "../../hooks/useIsMobile";
 
 interface NavbarProps {
     onMenuClick: (isOpen: boolean) => void;
@@ -25,15 +26,16 @@ interface NavbarProps {
  * @returns {JSX.Element} A JSX element representing a responsible navigation bar.
  */
 function Navbar({ onMenuClick, links }: NavbarProps): JSX.Element {
-    const [isOpen, setIsOpen] = useState(false);
+    const isMobile = useIsMobile(768);
+    const [isOpen, setIsOpen] = useState(isMobile ? false : true);
 
     const toggleMenu = (): void => {
         setIsOpen(!isOpen);
-        onMenuClick(!isOpen);
+        if (isMobile) onMenuClick(!isOpen);
     };
 
     return (
-        <nav className={`${styles.navbar} ${isOpen ? styles.isOpen : ""}`}>
+        <nav className={`${styles.navbar} ${isOpen && isMobile ? styles.isOpen : ""}`}>
             <button
                 className={styles.menu__icon}
                 aria-label="Abrir ou fechar menu"
@@ -45,7 +47,7 @@ function Navbar({ onMenuClick, links }: NavbarProps): JSX.Element {
 
             <ul
                 className={`${styles.navbar__links} ${
-                    isOpen ? styles.isOpen : ""
+                    isOpen && isMobile ? styles.isOpen : ""
                 }`}
                 id="navbar__links"
             >
@@ -53,7 +55,7 @@ function Navbar({ onMenuClick, links }: NavbarProps): JSX.Element {
                     <li
                         className={styles.navbar__link}
                         key={`li-${label}`}
-                        onClick={toggleMenu}
+                        onClick={isMobile ? toggleMenu : undefined}
                     >
                         <a
                             href="#"
@@ -64,10 +66,15 @@ function Navbar({ onMenuClick, links }: NavbarProps): JSX.Element {
                         </a>
                     </li>
                 ))}
-                <div
-                    className={styles.navbar__gradient}
-                    style={{ display: isOpen ? "block" : "none" }}
-                ></div>
+                <div className={styles.navbar__gradients}>
+                    {Array.from({ length: 3 }).map((_, index) => (
+                        <div
+                            className={styles.gradients__gradient}
+                            key={`navbar__gradient-${index}`}
+                            style={{display: isOpen && isMobile ? "block" : "none"}}
+                        ></div>
+                    ))}
+                </div>
             </ul>
         </nav>
     );

@@ -54,7 +54,11 @@ function Hero(): JSX.Element {
                 </div>
             </div>
 
-            <div className={styles.hero__gradient}></div>
+            <div className={styles.hero__gradients}>
+                {Array.from({ length: 4 }).map((_, index) => (
+                    <div className={styles.gradients__gradient} key={`hero__gradient-${index}`}></div>
+                ))}
+            </div>
         </section>
     );
 }

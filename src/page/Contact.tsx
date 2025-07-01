@@ -93,43 +93,49 @@ function Contact(): JSX.Element {
             </p>
 
             <div className={styles.contact__form}>
-                <Form>
-                    <Input
-                        value={formData.name}
-                        label="Nome:"
-                        id="name"
-                        autoComplete="name"
-                        isInvalid={errors.name}
-                        onChange={handleChange}
-                    />
-                    <Input
-                        value={formData.email}
-                        label="Email:"
-                        id="email"
-                        autoComplete="email"
-                        isInvalid={errors.email}
-                        type="email"
-                        onChange={handleChange}
-                    />
-                    <Input
-                        value={formData.subject}
-                        label="Assunto:"
-                        id="subject"
-                        isInvalid={errors.subject}
-                        onChange={handleChange}
-                    />
-                    <Textarea
-                        value={formData.message}
-                        label="Mensagem:"
-                        isInvalid={errors.message}
-                        id="message"
-                        onChange={handleChange}
-                    />
-                    <Button
-                        label="Enviar"
-                        color="primary"
-                        onClick={handleSubmit}
-                    />
+                <Form className={styles.formStyle}>
+                    <div className={styles.formStyle__inputs}>
+                        <Input
+                            value={formData.name}
+                            label="Nome:"
+                            id="name"
+                            autoComplete="name"
+                            isInvalid={errors.name}
+                            onChange={handleChange}
+                        />
+                        <Input
+                            value={formData.email}
+                            label="Email:"
+                            id="email"
+                            autoComplete="email"
+                            isInvalid={errors.email}
+                            type="email"
+                            onChange={handleChange}
+                        />
+                        <Input
+                            value={formData.subject}
+                            label="Assunto:"
+                            id="subject"
+                            isInvalid={errors.subject}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className={styles.formStyle__message}>
+                        <Textarea
+                            value={formData.message}
+                            label="Mensagem:"
+                            isInvalid={errors.message}
+                            id="message"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className={styles.formStyle__button}>
+                        <Button
+                            label="Enviar"
+                            color="primary"
+                            onClick={handleSubmit}
+                        />
+                    </div>
                 </Form>
             </div>
         </section>

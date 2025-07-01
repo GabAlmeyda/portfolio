@@ -1,7 +1,8 @@
 .hero {
     position: relative;
-    
+
     height: calc(100dvh - 3rem);
+    max-height: 900px;
 }
 
 .hero__content {
@@ -22,6 +23,10 @@
     color: var(--accent-color-primary);
     font-size: 2.3rem;
     font-weight: bold;
+}
+
+.hero__desc {
+    max-width: 400px;
 }
 
 .hero__desc span {
@@ -55,6 +60,7 @@
 .hero__socialMedias a:hover {
     transform: scale(1.07);
 }
+
 .hero__socialMedias a:active {
     transform: scale(0.93);
 }
@@ -63,17 +69,69 @@
     font-size: 2.1rem;
 }
 
-.hero__gradient {
+.hero__gradients {
+    position: absolute;
+    top: -3rem;
+
+    width: 100%;
+    height: 100px;
+}
+
+.gradients__gradient {
+    position: absolute;
+    left: -10px;
+
     user-select: none;
     pointer-events: none;
 
-    position: absolute;
-    left: -10px;
-    top: -3rem;
+    height: 400px;
+    width: 400px;
 
-    height: 60%;
-    width: 100%;
+    filter: blur(200px);
+}
+
+.gradients__gradient:nth-child(1) {
+    top: 100px;
 
     background-image: radial-gradient(circle at 0% 50%, #01816c, transparent 60%);
-    filter: blur(200px);
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 768px) {
+    .gradients__gradient {
+        height: 230px;
+        width: 230px;
+
+        filter: blur(400px);
+    }
+
+    .gradients__gradient:nth-child(1) {
+        position: absolute;
+        left: 150px;
+        top: -200px;
+
+        background-image: radial-gradient(circle at 100% 50%, #01816c86);
+    }
+    .gradients__gradient:nth-child(2) {
+        position: absolute;
+        left: -100px;
+        top: -70px;
+
+        background-image: radial-gradient(circle at 100% 50%, #01816c86);
+    }
+    .gradients__gradient:nth-child(3) {
+        position: absolute;
+        left: -100px;
+        top: 150px;
+
+        background-image: radial-gradient(circle at 100% 50%, #8618b963);
+    }
+    .gradients__gradient:nth-child(4) {
+        position: absolute;
+        left: -200px;
+        top: 340px;
+
+        background-image: radial-gradient(circle at 100% 50%, #014781a2);
+    }
 }

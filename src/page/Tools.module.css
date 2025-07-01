@@ -4,7 +4,7 @@
     align-items: center;
     gap: 1rem;
 
-    margin-top: 1.5rem;
+    margin-top: .5rem;
 }
 
 .card {
@@ -36,8 +36,8 @@
 }
 
 .card__tools {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: .5rem;
 
     margin-top: 1.5rem;
@@ -57,4 +57,16 @@
 
 .tools__tool p {
     margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .tools__cards {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    } 
+    
+    .card {
+        min-height: 230px;
+    }
 }
