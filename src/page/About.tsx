@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-import styles from "./About.module.css";
+import Section from "../components/layout/Section";
 
 /**
  * Renders the about section of the website.
@@ -10,7 +10,7 @@ import styles from "./About.module.css";
  */
 function About(): JSX.Element {
     return (
-        <section className={styles.about} id="about">
+        <Section id="about">
             <h2>Sobre mim</h2>
             <p>
                 Sou um desenvolvedor Full-Stack com experiência em diversos
@@ -22,7 +22,7 @@ function About(): JSX.Element {
                 Node.JS, criando interfaces agradáveis e eficientes que funcionam
                 em qualquer dispositivo. 
             </p>
-        </section>
+        </Section>
     );
 }
 

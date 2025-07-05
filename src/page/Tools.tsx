@@ -16,6 +16,7 @@ import {
     SiNodedotjs,
     SiPostgresql,
 } from "react-icons/si";
+import Section from "../components/layout/Section";
 
 interface ToolCard {
     title: string;
@@ -67,7 +68,7 @@ const backendTools: ToolCard = {
  */
 function Tools(): JSX.Element {
     return (
-        <section className={styles.tools} id="tools">
+        <Section className={styles.tools} id="tools">
             <h2>Habilidades</h2>
             <p>
                 Estas são as linguagens e ferramentas que utilizo para criar
@@ -96,7 +97,7 @@ function Tools(): JSX.Element {
                     )
                 )}
             </div>
-        </section>
+        </Section>
     );
 }
 

@@ -8,6 +8,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 
 import Button from "../components/ui/Button";
+import Section from "../components/layout/Section";
 
 /**
  * Renders the hero section of the website.
@@ -17,7 +18,7 @@ import Button from "../components/ui/Button";
  */
 function Hero(): JSX.Element {
     return (
-        <section className={styles.hero}>
+        <Section className={styles.hero}>
             <div className={styles.hero__content}>
                 <h1 className={styles.hero__intro}>
                     Olá, me chamo <br /> <span>Gabriel Almeida</span>
@@ -59,7 +60,7 @@ function Hero(): JSX.Element {
                     <div className={styles.gradients__gradient} key={`hero__gradient-${index}`}></div>
                 ))}
             </div>
-        </section>
+        </Section>
     );
 }
 

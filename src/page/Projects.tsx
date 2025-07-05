@@ -5,6 +5,7 @@ import styles from "./Projects.module.css";
 import { PROJECTS_INFO } from "../utils/constants";
 
 import Button from "../components/ui/Button";
+import Section from "../components/layout/Section";
 
 /**
  * Renders the projects section of the website.
@@ -14,13 +15,13 @@ import Button from "../components/ui/Button";
  */
 function Projects(): JSX.Element {
     return (
-        <section className={styles.projects} id="projects">
+        <Section className={styles.projects} id="projects">
             <h2>Projetos</h2>
 
-            <div className={styles.projects__carousel}>
+            <div className={styles.projects__list}>
                 {PROJECTS_INFO.map((project) => (
-                    <div key={project.id} className={styles.carousel__card}>
-                        <div className={styles.carousel__imageContainer}>
+                    <div key={project.id} className={styles.list__card}>
+                        <div className={styles.list__imageContainer}>
                             <img
                                 src={project.image}
                                 alt={project.title}
@@ -43,7 +44,7 @@ function Projects(): JSX.Element {
                     </div>
                 ))}
             </div>
-        </section>
+        </Section>
     );
 }
 

@@ -1,4 +1,4 @@
-.projects__carousel {
+.projects__list {
     display: flex;
     flex-direction: row;
     gap: .8rem;
@@ -10,7 +10,7 @@
     padding: 1rem;
 }
 
-.carousel__card {
+.list__card {
     position: relative;
 
     flex: 0 0 clamp(280px, 95%, 370px);
@@ -23,7 +23,7 @@
     background-color: var(--bg-surface);
 }
 
-.carousel__imageContainer {
+.list__imageContainer {
     position: relative;
 
     width: calc(100% + 2 * .5rem);
@@ -34,7 +34,7 @@
     margin-top: -.5rem;
     margin-bottom: 1rem;
 }
-.carousel__imageContainer::after {
+.list__imageContainer::after {
     content: "";
 
     position: absolute;
@@ -47,7 +47,7 @@
 
     background-color: var(--accent-color-secondary);
 }
-.carousel__imageContainer::before {
+.list__imageContainer::before {
     content: "";
 
     position: absolute;
@@ -115,4 +115,24 @@
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.712), transparent);
 
     pointer-events: none;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1024px) {
+    .projects__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        row-gap: 3rem;
+        column-gap: 1.5rem;
+
+        scroll-snap-type: none;
+        scroll-padding: 0;
+    }
+
+    .list__card {
+        width: 100%;
+
+        scroll-snap-align: none;
+    }
 }

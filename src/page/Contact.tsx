@@ -7,6 +7,7 @@ import Form from "../components/form/Form";
 import Input from "../components/form/Input";
 import Textarea from "../components/form/Textarea";
 import Button from "../components/ui/Button";
+import Section from "../components/layout/Section";
 
 interface FormData {
     name: string;
@@ -85,7 +86,7 @@ function Contact(): JSX.Element {
     };
 
     return (
-        <section className={styles.contact} id="contact">
+        <Section className={styles.contact} id="contact">
             <h2>Vamos conversar</h2>
             <p>
                 Preenchar o formulário abaixo e vamos começar a tirar sua ideia
@@ -138,7 +139,7 @@ function Contact(): JSX.Element {
                     </div>
                 </Form>
             </div>
-        </section>
+        </Section>
     );
 }
 
