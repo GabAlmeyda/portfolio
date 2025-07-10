@@ -2,6 +2,8 @@ import type { JSX } from "react";
 
 import styles from "./About.module.css";
 
+import aboutImage from '/src/assets/images/about.svg';
+
 import Section from "../components/layout/Section";
 
 /**
@@ -14,7 +16,7 @@ function About(): JSX.Element {
     return (
         <Section className={styles.about} id="about">
             <div className={styles.about__visual}>
-                <img src="/src/assets/images/about.svg" alt="Sobre" aria-hidden="true" />
+                <img src={aboutImage} alt="Sobre" aria-hidden="true" />
             </div>
             <div className={styles.about__content}>
                 <h2>Sobre mim</h2>

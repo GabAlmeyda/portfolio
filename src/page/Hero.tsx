@@ -6,6 +6,7 @@ import { navigateTo } from "../utils/functions";
 import { FaGithub } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
+import heroImage from '/src/assets/images/hero.svg';
 
 import Button from "../components/ui/Button";
 import Section from "../components/layout/Section";
@@ -63,7 +64,7 @@ function Hero(): JSX.Element {
             </div>
 
             <div className={styles.hero__visual}>
-                <img src="/src/assets/images/hero.svg" alt="Ideias" aria-hidden="true" />
+                <img src={heroImage} alt="Ideias" aria-hidden="true" />
             </div>
 
             <div className={styles.hero__gradients}>

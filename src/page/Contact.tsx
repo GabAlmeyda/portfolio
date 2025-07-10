@@ -9,6 +9,8 @@ import emailjs from "@emailjs/browser";
 
 import styles from "./Contact.module.css";
 
+import contactImage from '/src/assets/images/contact.svg';
+
 import Form from "../components/form/Form";
 import Input from "../components/form/Input";
 import Textarea from "../components/form/Textarea";
@@ -149,7 +151,7 @@ function Contact(): JSX.Element {
                 </div>
             </div>
             <div className={styles.contact__visual} aria-hidden="true">
-                <img src="/src/assets/images/contact.svg" alt="Contate-me" aria-hidden="true" />
+                <img src={contactImage} alt="Contate-me" aria-hidden="true" />
             </div>
         </Section>
     );
