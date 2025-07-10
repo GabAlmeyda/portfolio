@@ -13,6 +13,11 @@ function navigateTo(id: string): boolean {
     }
 
     element.scrollIntoView({ behavior: "smooth" });
+    if (!element.hasAttribute("tabindex")) {
+        element.setAttribute("tabindex", "-1");
+    }
+    element.focus();
+    
     return true;
 }
 

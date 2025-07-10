@@ -2,3 +2,9 @@
     width: 100%;
     height: auto;
 }
+
+@media screen and (min-width: 1024px) {
+    .section {
+        min-height: 60dvh;
+    }
+}

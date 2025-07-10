@@ -1,4 +1,10 @@
-import { useEffect, useState, type ChangeEvent, type FormEvent, type JSX } from "react";
+import {
+    useEffect,
+    useState,
+    type ChangeEvent,
+    type FormEvent,
+    type JSX,
+} from "react";
 import emailjs from "@emailjs/browser";
 
 import styles from "./Contact.module.css";
@@ -87,57 +93,63 @@ function Contact(): JSX.Element {
 
     return (
         <Section className={styles.contact} id="contact">
-            <h2>Vamos conversar</h2>
-            <p>
-                Preenchar o formulário abaixo e vamos começar a tirar sua ideia
-                do papel!
-            </p>
+            <div className={styles.contact__content}>
+                <h2>Vamos conversar</h2>
+                <p>
+                    Preenchar o formulário abaixo e vamos começar a tirar{" "}
+                    <span>sua ideia</span>{" "}
+                    do papel!
+                </p>
 
-            <div className={styles.contact__form}>
-                <Form className={styles.formStyle}>
-                    <div className={styles.formStyle__inputs}>
-                        <Input
-                            value={formData.name}
-                            label="Nome:"
-                            id="name"
-                            autoComplete="name"
-                            isInvalid={errors.name}
-                            onChange={handleChange}
-                        />
-                        <Input
-                            value={formData.email}
-                            label="Email:"
-                            id="email"
-                            autoComplete="email"
-                            isInvalid={errors.email}
-                            type="email"
-                            onChange={handleChange}
-                        />
-                        <Input
-                            value={formData.subject}
-                            label="Assunto:"
-                            id="subject"
-                            isInvalid={errors.subject}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className={styles.formStyle__message}>
-                        <Textarea
-                            value={formData.message}
-                            label="Mensagem:"
-                            isInvalid={errors.message}
-                            id="message"
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className={styles.formStyle__button}>
-                        <Button
-                            label="Enviar"
-                            color="primary"
-                            onClick={handleSubmit}
-                        />
-                    </div>
-                </Form>
+                <div className={styles.contact__form}>
+                    <Form className={styles.formStyle}>
+                        <div className={styles.formStyle__inputs}>
+                            <Input
+                                value={formData.name}
+                                label="Nome:"
+                                id="name"
+                                autoComplete="name"
+                                isInvalid={errors.name}
+                                onChange={handleChange}
+                            />
+                            <Input
+                                value={formData.email}
+                                label="Email:"
+                                id="email"
+                                autoComplete="email"
+                                isInvalid={errors.email}
+                                type="email"
+                                onChange={handleChange}
+                            />
+                            <Input
+                                value={formData.subject}
+                                label="Assunto:"
+                                id="subject"
+                                isInvalid={errors.subject}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className={styles.formStyle__message}>
+                            <Textarea
+                                value={formData.message}
+                                label="Mensagem:"
+                                isInvalid={errors.message}
+                                id="message"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className={styles.formStyle__button}>
+                            <Button
+                                label="Enviar"
+                                color="primary"
+                                onClick={handleSubmit}
+                            />
+                        </div>
+                    </Form>
+                </div>
+            </div>
+            <div className={styles.contact__visual} aria-hidden="true">
+                <img src="/src/assets/images/contact.svg" alt="Contate-me" aria-hidden="true" />
             </div>
         </Section>
     );

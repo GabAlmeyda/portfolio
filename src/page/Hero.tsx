@@ -28,13 +28,20 @@ function Hero(): JSX.Element {
                     construir projetos seguros, eficientes e atrativos.
                 </p>
 
-                <span className={styles.hero__cta}>
+                <div className={styles.hero__ctas}>
                     <Button
                         label="Entre em contato"
                         color="primary"
                         onClick={() => navigateTo("contact")}
                     />
-                </span>
+                    <a href="/public/files/almeida_curriculo.pdf" download>
+                        <Button
+                            label="Baixar CV"
+                            color="ghostPrimary"
+                            onClick={() => {}}
+                        />
+                    </a>
+                </div>
 
                 <div className={styles.hero__socialMedias}>
                     <a href="https://github.com/GabAlmeyda" aria-label="GitHub" target="_blank">
@@ -55,8 +62,12 @@ function Hero(): JSX.Element {
                 </div>
             </div>
 
+            <div className={styles.hero__visual}>
+                <img src="/src/assets/images/hero.svg" alt="Ideias" aria-hidden="true" />
+            </div>
+
             <div className={styles.hero__gradients}>
-                {Array.from({ length: 4 }).map((_, index) => (
+                {Array.from({ length: 5 }).map((_, index) => (
                     <div className={styles.gradients__gradient} key={`hero__gradient-${index}`}></div>
                 ))}
             </div>

@@ -16,7 +16,10 @@ import Section from "../components/layout/Section";
 function Projects(): JSX.Element {
     return (
         <Section className={styles.projects} id="projects">
-            <h2>Projetos</h2>
+            <div className={styles.projects__texts}>
+                <h2>Projetos</h2>
+                <p>Descubra as ideias que eu ajudei a tirar do papel</p>
+            </div>
 
             <div className={styles.projects__list}>
                 {PROJECTS_INFO.map((project) => (

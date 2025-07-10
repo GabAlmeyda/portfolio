@@ -3,6 +3,8 @@
 
     height: calc(100dvh - 3rem);
     max-height: 900px;
+
+    margin-top: 5rem;
 }
 
 .hero__content {
@@ -11,7 +13,7 @@
 }
 
 .hero__intro {
-    margin-block: 3rem 1rem;
+    margin-bottom: 1rem;
 
     font-size: 1.4rem;
     font-weight: normal;
@@ -21,7 +23,7 @@
 
 .hero__intro span {
     color: var(--accent-color-primary);
-    font-size: 2.3rem;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
@@ -36,8 +38,11 @@
     text-decoration-thickness: 2px;
 }
 
-.hero__cta {
-    display: inline-block;
+.hero__ctas {
+    display: flex;
+    gap: .8rem;
+
+    width: fit-content;
 
     margin-top: 4rem;
 }
@@ -108,30 +113,71 @@
 
     .gradients__gradient:nth-child(1) {
         position: absolute;
-        left: 150px;
+        left: -200px;
+        top: -185px;
+
+        background-image: radial-gradient(circle at 100% 50%, #01816c93);
+    }
+
+    .gradients__gradient:nth-child(2) {
+        position: absolute;
+        left: 100px;
         top: -200px;
 
-        background-image: radial-gradient(circle at 100% 50%, #01816c86);
+        background-image: radial-gradient(circle at 100% 50%, #01816c93);
     }
-    .gradients__gradient:nth-child(2) {
+
+    .gradients__gradient:nth-child(3) {
         position: absolute;
         left: -100px;
         top: -70px;
 
-        background-image: radial-gradient(circle at 100% 50%, #01816c86);
+        background-image: radial-gradient(circle at 100% 50%, #01816c93);
     }
-    .gradients__gradient:nth-child(3) {
+
+    .gradients__gradient:nth-child(4) {
         position: absolute;
-        left: -100px;
+
+        left: -150px;
         top: 150px;
 
-        background-image: radial-gradient(circle at 100% 50%, #8618b963);
+        background-image: radial-gradient(circle at 100% 50%, #014781a6);
     }
-    .gradients__gradient:nth-child(4) {
+
+    .gradients__gradient:nth-child(5) {
         position: absolute;
         left: -200px;
         top: 340px;
 
-        background-image: radial-gradient(circle at 100% 50%, #014781a2);
+        background-image: radial-gradient(circle at 100% 50%, #8310b994);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero__intro {
+        font-size: 2rem;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero__visual {
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+
+        user-select: none;
+        pointer-events: none;
+
+        width: 450px;
+    }
+
+    .hero__visual img {
+        width: 80%;
+
+        aspect-ratio: 1 / 1;
     }
 }
