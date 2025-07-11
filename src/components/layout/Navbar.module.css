@@ -122,7 +122,8 @@
     }
 
     .navbar__links {
-        width: calc((4 * 125px) + (3 * clamp(0.5rem, 2vw, 2rem)));
+        /*  */
+        width: calc((3 * 125px) + (2 * clamp(0.5rem, 2vw, 2rem)));
 
         display: flex;
         flex-direction: row;

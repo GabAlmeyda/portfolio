@@ -60,7 +60,7 @@ function Navbar({ onMenuClick, links }: NavbarProps): JSX.Element {
                         <a
                             href="#"
                             target="_self"
-                            onClick={() => navigateTo(id)}
+                            onClick={(e) => { e.preventDefault();  navigateTo(id)}}
                         >
                             {label}
                         </a>

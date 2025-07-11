@@ -9,7 +9,7 @@ import emailjs from "@emailjs/browser";
 
 import styles from "./Contact.module.css";
 
-import contactImage from '/src/assets/images/contact.svg';
+import contactImage from "/src/assets/images/contact.svg";
 
 import Form from "../components/form/Form";
 import Input from "../components/form/Input";
@@ -65,14 +65,14 @@ function Contact(): JSX.Element {
         e.preventDefault();
 
         // Verifies if the field are filled
+        let hasError = false;
         Object.entries(formData).forEach(([key, value]) => {
             if (value.trim() === "") {
+                hasError = true;
                 setErrors((prev) => ({ ...prev, [key]: true }));
             }
         });
-        if (Object.values(errors).some((value) => value === true)) {
-            return;
-        }
+        if (hasError) return;
 
         try {
             await emailjs.send(
@@ -99,8 +99,7 @@ function Contact(): JSX.Element {
                 <h2>Vamos conversar</h2>
                 <p>
                     Preenchar o formulário abaixo e vamos começar a tirar{" "}
-                    <span>sua ideia</span>{" "}
-                    do papel!
+                    <span>sua ideia</span> do papel!
                 </p>
 
                 <div className={styles.contact__form}>

@@ -6,15 +6,16 @@ import { navigateTo } from "../utils/functions";
 import { FaGithub } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
-import heroImage from '/src/assets/images/hero.svg';
+
+import heroImage from "/src/assets/images/hero.svg";
 
 import Button from "../components/ui/Button";
 import Section from "../components/layout/Section";
 
 /**
  * Renders the hero section of the website.
- * 
- * @returns {JSX.Element} A JSX element representing the hero section 
+ *
+ * @returns {JSX.Element} A JSX element representing the hero section
  * of the website.
  */
 function Hero(): JSX.Element {
@@ -45,17 +46,29 @@ function Hero(): JSX.Element {
                 </div>
 
                 <div className={styles.hero__socialMedias}>
-                    <a href="https://github.com/GabAlmeyda" aria-label="GitHub" target="_blank">
+                    <a
+                        href="https://github.com/GabAlmeyda"
+                        aria-label="GitHub"
+                        target="_blank"
+                    >
                         <span aria-hidden="true">
                             <FaGithub />
                         </span>
                     </a>
-                    <a href="https://www.instagram.com/almeyda.dev" aria-label="Instagram" target="_blank">
+                    <a
+                        href="https://www.instagram.com/almeyda.dev"
+                        aria-label="Instagram"
+                        target="_blank"
+                    >
                         <span aria-hidden="true">
                             <AiFillInstagram />
                         </span>
                     </a>
-                    <a href="https://www.linkedin.com/in/gabriel-almeyda/" aria-label="LinkedId" target="_blank">
+                    <a
+                        href="https://www.linkedin.com/in/gabriel-almeyda/"
+                        aria-label="LinkedId"
+                        target="_blank"
+                    >
                         <span aria-hidden="true">
                             <TbBrandLinkedinFilled />
                         </span>
@@ -64,12 +77,17 @@ function Hero(): JSX.Element {
             </div>
 
             <div className={styles.hero__visual}>
-                <img src={heroImage} alt="Ideias" aria-hidden="true" />
+                <div className={styles.imageContainer}>
+                    <img src={heroImage} alt="Ideias" aria-hidden="true" />
+                </div>
             </div>
 
             <div className={styles.hero__gradients}>
                 {Array.from({ length: 5 }).map((_, index) => (
-                    <div className={styles.gradients__gradient} key={`hero__gradient-${index}`}></div>
+                    <div
+                        className={styles.gradients__gradient}
+                        key={`hero__gradient-${index}`}
+                    ></div>
                 ))}
             </div>
         </Section>

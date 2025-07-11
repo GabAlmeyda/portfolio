@@ -1,7 +1,7 @@
 .hero {
     position: relative;
 
-    height: calc(100dvh - 3rem);
+    height: calc(100dvh - 8rem);
     max-height: 900px;
 
     margin-top: 5rem;
@@ -10,6 +10,10 @@
 .hero__content {
     position: relative;
     z-index: 2;
+}
+
+.hero__visual {
+    display: none;
 }
 
 .hero__intro {
@@ -104,6 +108,64 @@
 /* Media Queries */
 
 @media screen and (min-width: 768px) {
+    .hero {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        max-height: 600px;
+
+        margin-top: 0rem;
+    }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .hero__visual {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        width: 50%;
+
+        user-select: none;
+        pointer-events: none;
+    }
+
+    .hero__visual .imageContainer {
+        position: relative;
+        z-index: 0;
+    }
+    .hero__visual .imageContainer::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+
+        height: 300px;
+        width: 300px;
+
+        border-radius: 50%;
+
+        background-color: #151f33;
+
+        transform: translate(-50%, -50%);
+    }
+
+    .hero__visual .imageContainer img {
+        position: relative;
+        z-index: 1;
+
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
     .gradients__gradient {
         height: 230px;
         width: 230px;
@@ -158,26 +220,8 @@
         font-size: 2rem;
     }
 
-    .hero {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
     .hero__visual {
-        display: flex;
-        justify-content: flex-start;
-        align-items: start;
-
-        user-select: none;
-        pointer-events: none;
-
-        width: 450px;
-    }
-
-    .hero__visual img {
-        width: 80%;
-
-        aspect-ratio: 1 / 1;
+        position: relative;
+        justify-content: center;
     }
 }
