@@ -1,7 +1,7 @@
 .hero {
     position: relative;
 
-    height: calc(100dvh - 8rem);
+    min-height: calc(100dvh - 8rem);
     max-height: 900px;
 
     margin-top: 5rem;
