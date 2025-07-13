@@ -43,10 +43,14 @@
 
 .field__input:-webkit-autofill,
 .field__input:-webkit-autofill:hover,
-.field__input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+.field__input:-webkit-autofill:active,
+.field__input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--bg-primary) inset !important;
+
+    background-color: var(--bg-primary) !important;
+
     -webkit-text-fill-color: var(--font-primary) !important;
-    background-color: transparent !important;
+    caret-color: var(--font-primary) !important;
 }
 
 .invalid .field__label,

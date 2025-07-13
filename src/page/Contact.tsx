@@ -16,6 +16,7 @@ import Input from "../components/form/Input";
 import Textarea from "../components/form/Textarea";
 import Button from "../components/ui/Button";
 import Section from "../components/layout/Section";
+import Toast from "../components/ui/Toast";
 
 interface FormData {
     name: string;
@@ -48,6 +49,13 @@ function Contact(): JSX.Element {
         subject: false,
         message: false,
     });
+    const [toastInfo, setToastInfo] = useState<{
+        label: string;
+        state: "idle" | "success" | "pending" | "error";
+    }>({
+        label: "",
+        state: "idle",
+    });
 
     useEffect(() => {
         sessionStorage.setItem("formData", JSON.stringify(formData));
@@ -63,8 +71,9 @@ function Contact(): JSX.Element {
 
     const handleSubmit = async (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-        // Verifies if the field are filled
+        // Verifies if the field are correctly filled
         let hasError = false;
         Object.entries(formData).forEach(([key, value]) => {
             if (value.trim() === "") {
@@ -72,9 +81,17 @@ function Contact(): JSX.Element {
                 setErrors((prev) => ({ ...prev, [key]: true }));
             }
         });
+        if (!emailRegex.test(formData.email)) {
+            hasError = true;
+            setErrors((prev) => ({ ...prev, email: true }));
+        }
         if (hasError) return;
 
         try {
+            setToastInfo({
+                label: "Enviando email...",
+                state: "pending",
+            });
             await emailjs.send(
                 "service_portfolio",
                 "template_0ujh4fr",
@@ -87,14 +104,22 @@ function Contact(): JSX.Element {
                 "fY5zIrzDgOEoTmJo8"
             );
 
-            setFormData({ name: "", email: "", subject: "", message: "" });
+            setToastInfo({
+                label: "Email enviado com sucesso!",
+                state: "success",
+            });
         } catch (err) {
             console.error(`Error on submiting email: ${err}`);
+            setToastInfo({
+                label: "Email não enviado. Por favor, tente novamente.",
+                state: "error",
+            });
         }
     };
 
     return (
         <Section className={styles.contact} id="contact">
+            <Toast label={toastInfo.label} state={toastInfo.state} />
             <div className={styles.contact__content}>
                 <h2>Vamos conversar</h2>
                 <p>
